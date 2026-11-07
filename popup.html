@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Circle to Fix</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <span class="logo" aria-hidden="true">C</span>
+        <div>
+          <h1>Circle to Fix</h1>
+          <p>Visual bug reporting, kept local.</p>
+        </div>
+      </header>
+      <button id="activate" class="activate">Start marking this page</button>
+      <p id="status" class="status" role="status"></p>
+      <section class="info">
+        <h2>How it works</h2>
+        <ol>
+          <li>Choose Box, Circle, or Arrow and mark the page.</li>
+          <li>Describe the issue, then generate and edit your prompt.</li>
+          <li>Save the screenshot and attach it separately to your coding agent.</li>
+        </ol>
+      </section>
+      <p class="privacy">No page content or screenshots are uploaded. Element text and form values are handled conservatively.</p>
+      <footer>Shortcut: <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd></footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

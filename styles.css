@@ -1,0 +1,306 @@
+.ctf-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ctf-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: auto;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.ctf-toolbar,
+.ctf-history,
+.ctf-note-panel {
+  box-sizing: border-box;
+  color: #172033;
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.ctf-toolbar {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  max-width: calc(100vw - 24px);
+  padding: 8px;
+  border: 1px solid #e3e7ed;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 30px #1020332b;
+  pointer-events: auto;
+}
+
+.ctf-toolbar button,
+.ctf-note-panel button {
+  min-height: 34px;
+  padding: 7px 11px;
+  border: 1px solid #dfe4eb;
+  border-radius: 9px;
+  background: #fff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.ctf-toolbar button:hover,
+.ctf-note-panel button:hover {
+  background: #f3f5f8;
+}
+
+.ctf-toolbar .is-active {
+  border-color: #ff6b35;
+  background: #fff1eb;
+  color: #b63a0b;
+}
+
+.ctf-toolbar .ctf-exit {
+  border-color: #172033;
+  background: #172033;
+  color: #fff;
+}
+
+.ctf-brand {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 7px 0 3px;
+  white-space: nowrap;
+}
+
+.ctf-mark {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border-radius: 8px;
+  background: #ff6b35;
+  color: white;
+  font-weight: 800;
+}
+
+.ctf-tools {
+  display: flex;
+  gap: 5px;
+}
+
+.ctf-history {
+  position: fixed;
+  top: 76px;
+  left: 50%;
+  display: flex;
+  gap: 5px;
+  max-width: calc(100vw - 24px);
+  overflow: auto;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
+.ctf-history-item {
+  flex: 0 0 auto;
+  padding: 5px 9px;
+  border: 1px solid #e3e7ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #172033;
+  font: 600 11px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.ctf-note-panel {
+  position: fixed;
+  top: 50%;
+  right: 18px;
+  z-index: 5;
+  display: none;
+  width: min(390px, calc(100vw - 28px));
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 18px;
+  border: 1px solid #e1e6ed;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 16px 55px #10203340;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+.ctf-note-panel.is-open {
+  display: block;
+}
+
+.ctf-panel-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ctf-panel-header h2 {
+  margin: 3px 0 0;
+  color: #172033;
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.ctf-eyebrow {
+  display: block;
+  color: #c34a20;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .09em;
+}
+
+.ctf-close {
+  width: 32px;
+  min-width: 32px;
+  padding: 0 !important;
+}
+
+.ctf-selected {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.ctf-selected strong {
+  font-size: 13px;
+}
+
+.ctf-selected small {
+  color: #687386;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+.ctf-screenshot {
+  display: grid;
+  min-height: 82px;
+  max-height: 150px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  place-items: center;
+  border: 1px solid #e3e7ed;
+  border-radius: 10px;
+  background: #f4f6f8;
+}
+
+.ctf-screenshot img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ctf-placeholder {
+  padding: 20px;
+  color: #697386;
+}
+
+.ctf-note-fields,
+.ctf-prompt-wrap {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.ctf-note-fields label,
+.ctf-prompt-wrap label {
+  font-weight: 700;
+}
+
+.ctf-note-panel textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+  padding: 10px;
+  border: 1px solid #ccd3de;
+  border-radius: 9px;
+  background: #fff;
+  color: #172033;
+  font: 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.ctf-note-panel textarea:focus {
+  border-color: #ff6b35;
+  outline: 2px solid #ff6b352e;
+}
+
+.ctf-note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.ctf-note-panel .ctf-primary {
+  border-color: #172033;
+  background: #172033;
+  color: #fff;
+}
+
+.ctf-note-panel .ctf-copy {
+  border-color: #d65123;
+  background: #ff6b35;
+  color: #fff;
+}
+
+.ctf-note-panel .ctf-danger {
+  color: #a4262c;
+}
+
+.ctf-status {
+  min-height: 18px;
+  margin: 9px 0 0;
+  color: #26734d;
+  font-size: 11px;
+}
+
+.ctf-status.is-error {
+  color: #b42318;
+}
+
+.ctf-privacy {
+  margin: 3px 0 0;
+  color: #697386;
+  font-size: 10px;
+}
+
+@media (max-width: 600px) {
+  .ctf-toolbar {
+    top: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 6px;
+  }
+
+  .ctf-brand {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .ctf-toolbar button {
+    padding: 6px 8px;
+  }
+
+  .ctf-history {
+    top: 91px;
+  }
+
+  .ctf-note-panel {
+    right: 10px;
+    width: calc(100vw - 20px);
+    max-height: calc(100vh - 20px);
+  }
+}

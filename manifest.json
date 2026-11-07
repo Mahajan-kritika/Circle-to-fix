@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Circle to Fix",
+  "version": "1.0.0",
+  "description": "Mark webpage issues and create local, screenshot-backed coding prompts.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Circle to Fix",
+    "default_popup": "popup/popup.html"
+  },
+  "commands": {
+    "activate-drawing": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+X"
+      },
+      "description": "Activate Circle to Fix on the current page"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
